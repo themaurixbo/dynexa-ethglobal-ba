@@ -320,3 +320,16 @@ From a Flare ecosystem perspective, Dynexa is a repeatable pattern:
 
 Dynexa becomes a **demand driver** for FLR, FXRP, FTSO and XRPFI, while giving brands and users a simple interface: more meaningful rewards, powered by Flare, without any DeFi complexity on their side.
 
+CONTRACTS VERIFIED AND DEPLOYD EN TESTNET:
+
+DynexaYieldConfig: 0xF69aAfbC325FD4E13Cb2ae05eCd79AC5Af463770
+https://coston2-explorer.flare.network/address/0xf69aafbc325fd4e13cb2ae05ecd79ac5af463770
+
+DynexaFlareTreasury: 0x5952CbB1719C11ce270AcA114E9328B0801013E1
+https://coston2-explorer.flare.network/address/0x5952cbb1719c11ce270aca114e9328b0801013e1
+
+
+
+
+
+
