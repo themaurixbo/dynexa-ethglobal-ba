@@ -1,5 +1,7 @@
 
 # README_FLARE  
+ETHGLOBAL AR 2025
+
 Dynexa Yield Engine on Flare  
 
 ---
@@ -40,10 +42,6 @@ We explicitly leverage Flare’s **enshrined data protocols** and native feature
      - Value treasury holdings in USD terms.
      - Enforce **price-aware risk limits** (max allocation caps, price floors, drawdown thresholds).
 
-### 2.3 (Optional) Flare Data Connector (Web2Json)
-
-- Optionally, we integrate **FDC Web2Json** to pull **Dynexa usage stats** (completed quests, active users per brand) from a Web2 API into a contract on Flare.
-- These stats can be used by a `DynexaSubsidyEngine` contract to decide **how the yield pool is split across brands** based on real engagement.
 
 ---
 
@@ -67,7 +65,7 @@ Brands **never** interact with these strategies directly. They only see a higher
 
 ## 4. Smart Contract Suite
 
-Below is the contract suite dedicated to Flare. Names are indicative and can be adjusted.
+Below is the contract suite dedicated to Flare.
 
 ### 4.1 `DynexaFlareTreasury`
 
@@ -165,7 +163,7 @@ This prevents instant, arbitrary changes to core risk limits.
 ### 4.3 `DynexaFTSOManager`
 
 **Purpose**  
-Encapsulate FTSO delegation logic and yield accounting.
+Encapsulate FTSO delegation logic and yield accounting. For testing purposses the delegation address is ours.
 
 **Key structures**
 
@@ -235,7 +233,7 @@ mapping(uint256 => uint256) public companySubsidyUnits;
 
 **Key functions**
 
-- `updateActivityStats(Proof proof)` – FDC Web2Json integration (optional).  
+ 
 - `recalculateSubsidies()` – recompute per-brand shares.  
 - `consumeSubsidy(uint256 companyId, uint256 amount)` – called by Dynexa core when issuing extra rewards.
 
@@ -260,7 +258,7 @@ mapping(uint256 => uint256) public companySubsidyUnits;
 
 ### 5.2 FXRP XRPFI / DeFi Flow
 
-1. Brands fund Dynexa (fiat, USDC, etc.).  
+1. Brands fund Dynexa (fiat, USDC, XRP, FLR.).  
 2. Dynexa converts a portion into **XRP** and sends it to its XRPL wallet.  
 3. Using FAssets:
    - Call `reserveCollateral` on the FXRP AssetManager.  
@@ -321,3 +319,4 @@ From a Flare ecosystem perspective, Dynexa is a repeatable pattern:
 > Take existing off-chain budgets (loyalty, marketing, rewards), pool them on Flare, turn them into yield, and feed that yield back into a Web3 user experience.
 
 Dynexa becomes a **demand driver** for FLR, FXRP, FTSO and XRPFI, while giving brands and users a simple interface: more meaningful rewards, powered by Flare, without any DeFi complexity on their side.
+
