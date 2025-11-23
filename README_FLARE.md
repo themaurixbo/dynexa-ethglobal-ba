@@ -14,7 +14,7 @@ On **Flare**, Dynexa runs a dedicated **Yield Engine** that:
 - Generates **two types of native yield**:
   1. **FLR FTSO delegation yield** (low-risk, protocol-native).  
   2. **DeFi yield using FXRP / XRPFI vaults** (higher-yield, managed risk).  
-- Converts this yield into a **subsidy pool** that finances extra rewards, quests, and campaigns in Dynexa — without brands ever touching DeFi directly.
+- Converts this yield into a **subsidy pool** that finances extra rewards, quests, and campaigns in Dynexa — without brands ever touching DeFi directly. Also this is on of the incomes for Dynexa
 
 Flare is not “just a price feed” here; it is the **core yield and data layer** underneath Dynexa’s loyalty ecosystem.
 
