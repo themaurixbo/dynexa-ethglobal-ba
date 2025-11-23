@@ -1,0 +1,3 @@
+forge build --contracts src/AutoYieldWallet2.sol
+source .env && forge script script/DeployCoston2.s.sol:DeployCoston2Script --rpc-url https://coston2-api.flare.network/ext/C/rpc --broadcast
+forge verify-contract 0xc3e3352Ef94c09a3778af50b25dd1473b2b8d63e SponsorVault --chain-id 114 --verifier blockscout --verifier-url https://coston2-explorer.flare.network/api --constructor-args $(cast abi-encode "constructor(address,address)" 0xC67DCE33D7A8efA5FfEB961899C73fe01bCe9273 0x1172445561D27EeEF366529115AAa79a6363CD73)

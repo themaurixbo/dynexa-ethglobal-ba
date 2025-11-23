@@ -1,0 +1,15 @@
+# foundry.toml
+[profile.default]
+src = "src"
+out = "out"
+libs = ["lib"]
+solc = "0.8.25"
+evm_version = "shanghai"
+
+[rpc_endpoints]
+flare = "https://flare-api.flare.network/ext/bc/C/rpc"
+coston2 = "https://coston2-api.flare.network/ext/bc/C/rpc"
+
+[etherscan]
+flare = { key = "", chain = 14, url = "https://flare-explorer.flare.network/api" }
+coston2 = { key = "", chain = 114, url = "https://coston2-explorer.flare.network/api" }
