@@ -6,6 +6,7 @@ import "../src/SponsorDelegationVault.sol";
 import "../src/DynexaYieldConfig.sol";
 import "../src/DynexaFlareTreasury.sol";
 import "../src/DynexaFTSOManager.sol";
+import "../src/DynexaSubsidyEngine.sol";
 
 contract DeployAllScript is Script {
     // Direcciones reales en Coston2
@@ -53,6 +54,13 @@ contract DeployAllScript is Script {
             deployer            // admin
         );
         console.log("4. DynexaFTSOManager:", address(manager));
+
+        // 5. Deploy DynexaSubsidyEngine
+        DynexaSubsidyEngine engine = new DynexaSubsidyEngine(
+            address(treasury),  // _treasury
+            deployer            // admin
+        );
+        console.log("5. DynexaSubsidyEngine:", address(engine));
 
         console.log("========================================");
         console.log("All contracts deployed successfully!");
