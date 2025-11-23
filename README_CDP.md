@@ -137,5 +137,48 @@ To the user, it feels like a normal app with “points and rewards”; under the
   - Yield-powered loyalty across Flare and other chains.
 
 CDP is the glue that connects Web2 brands and mainstream users to Dynexa’s onchain reward engine.
-
 Turn loyalty into a game everyone wins
+
+## CONTRACTS DEPLOYED AND VERIFIED
+
+
+
+
+DynexaToken.sol
+ERC20 para el token nativo DYNEXA (1:1 visual con USDC en el UX).
+0xC26a26Ad325ae0Aa0f768fe90e3DC11bA794a4F5
+https://sepolia.basescan.org/address/0xC26a26Ad325ae0Aa0f768fe90e3DC11bA794a4F5#code
+
+
+DynexaCompanyRegistry.sol
+Registro de empresas/brands que participan en Dynexa.
+0x30165DEed5D5A05cE696f2195d4E2363219f9639
+https://sepolia.basescan.org/address/0x30165DEed5D5A05cE696f2195d4E2363219f9639
+
+
+DynexaGiftToken.sol (ERC1155)
+GiftTokens multi-brand, cada tokenId = un premio/cupón/camisa/entrada, etc.
+0xd51B871d4a68293a21BC172ce45E099Af1014790
+https://sepolia.basescan.org/address/0xd51B871d4a68293a21BC172ce45E099Af1014790#code
+
+
+
+DynexaQuestRewards.sol
+Capa de campañas/quests sobre Base:
+vincula companyId, tokenId de GiftToken y emite recompensas (DYNEXA y/o GiftTokens) cuando el backend/XMTP agent marca una misión como completada.
+0x76e8DA340B06850C8a397a880e317c288949f590
+https://sepolia.basescan.org/address/0x76e8DA340B06850C8a397a880e317c288949f590
+
+=====
+On Base (Base Sepolia) we run:
+
+The native DYNEXA token (ERC-20).
+
+The brand Company Registry.
+
+The DynexaGiftToken contract (ERC-1155) for all multi-brand GiftTokens.
+
+The QuestRewards contract, which uses those contracts to pay rewards to users when they complete missions coordinated via XMTP.
+
+CDP Embedded Wallets and Coinbase Pay live in the frontend/backend, but they interact with these contracts on Base.
+
