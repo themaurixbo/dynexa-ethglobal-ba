@@ -1,6 +1,7 @@
 import { keystore } from '@xmtp/proto'
 import { Subscription } from 'expo-modules-core'
 
+
 import { Client, InboxId } from './Client'
 import { ConsentState } from './ConsentRecord'
 import { ConversationVersion, ConversationBase } from './Conversation'
