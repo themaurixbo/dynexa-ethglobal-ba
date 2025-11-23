@@ -1,4 +1,0 @@
-localhost:8443 {
-  tls internal
-  reverse_proxy upload-service:4567
-}
