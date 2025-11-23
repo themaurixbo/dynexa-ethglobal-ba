@@ -32,7 +32,6 @@ We integrate the following components of Coinbase Developer Platform:
    - Funds are delivered as USDC/crypto directly to a Dynexa treasury address onchain.  
    - This capital becomes the base for campaigns, quests, and—to the extent we connect to Flare—the source that feeds our yield engine.
 
-*(If you want to add more CDP tools later, e.g. Data APIs or x402, this README can be extended.)*
 
 ---
 
@@ -80,7 +79,7 @@ To the user, it feels like a normal app with “points and rewards”; under the
    - This budget can now be used to:
      - Create quests and campaigns.
      - Issue GiftTokens and DYNEXA rewards to users.
-     - Optionally send part of that capital into Flare for yield generation.
+     - Internally we, as DYNEXA OWNERS  send part of that capital into Flare for yield generation.
 
 ---
 
@@ -88,7 +87,7 @@ To the user, it feels like a normal app with “points and rewards”; under the
 
 ### 4.1 High-level components
 
-- **Dynexa Web / Mobile App**
+- **Dynexa Web / Mobile App** (JUSTO MOCKUPS)
   - Frontend where users see their balance, quests, and rewards.
   - Communicates with:
     - Dynexa backend APIs.
@@ -109,30 +108,6 @@ To the user, it feels like a normal app with “points and rewards”; under the
 - **Coinbase Developer Platform**
   - **Embedded Wallets**: secure, abstracted wallets for end-users.
   - **Coinbase Pay**: fiat/crypto onramp that funds Dynexa’s treasury addresses.
-
----
-
-### 4.2 Example Integration Points
-
-These are conceptual examples of where CDP interacts with Dynexa:
-
-- `POST /api/users/register`  
-  - After creating a Dynexa user, call CDP Embedded Wallet API:
-    - Create wallet → store `walletId`.
-  - Return a session that can sign transactions via embedded wallet.
-
-- `POST /api/brands/topup`
-  - Generate a Coinbase Pay session link with:
-    - Target address = Dynexa treasury on Base.
-    - Asset = USDC (or other).
-    - Amount = requested top-up.
-  - Frontend redirects brand to Coinbase Pay.
-  - Backend listens to onchain deposit events and credits the brand’s balance.
-
-- `POST /api/quests/claim`
-  - Validate quest completion off-chain.
-  - If valid, instruct the user’s embedded wallet to sign:
-    - A tx calling `DynexaRewardEngine.mintReward(userWallet, rewardData)`.
 
 ---
 
@@ -161,3 +136,5 @@ These are conceptual examples of where CDP interacts with Dynexa:
   - Yield-powered loyalty across Flare and other chains.
 
 CDP is the glue that connects Web2 brands and mainstream users to Dynexa’s onchain reward engine.
+
+Turn loyalty into a game everyone wins
